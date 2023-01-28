@@ -1,13 +1,23 @@
 package com.driver;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 public class Message {
     private int id;
     private String content;
-    private LocalDateTime timestamp;
+    private Date timestamp;
 
-    public Message(int id, String content, LocalDateTime timestamp) {
+    public Message(int id) {
+        this.id = id;
+        this.timestamp = new Date();
+    }
+
+    public Message(int id, String content) {
+        this.id = id;
+        this.content = content;
+        this.timestamp = new Date();
+    }
+    public Message(int id, String content, Date timestamp) {
         this.id = id;
         this.content = content;
         this.timestamp = timestamp;
@@ -29,23 +39,11 @@ public class Message {
         this.content = content;
     }
 
-    public LocalDateTime getTimestamp() {
+    public Date getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(LocalDateTime timestamp) {
+    public void setTimestamp(Date timestamp) {
         this.timestamp = timestamp;
-    }
-
-    public Object getGroupName() {
-        return this.getGroupName();
-    }
-
-    public Object getSender() {
-        return this.getSender();
-    }
-
-    public Integer getMessageId() {
-        return this.getMessageId();
     }
 }

@@ -1,39 +1,25 @@
-package com.driver;
+package com.driver ;
+import java.util.HashSet ;
 
 public class User {
     private String name;
     private String mobile;
-    private String mobileNumber;
-
+    static HashSet < String > set ;
     public User(String name, String mobile) {
-        this.name = name;
-        this.mobile = mobile;
+        new HashSet<>() ;
+        this.name = name ;
+        this.mobile = mobile ;
     }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
-    public String getMobileNumber() {
-        return mobileNumber;
+    public String getMobile() {
+        return mobile;
     }
-
-    public void setMobileNumber(String mobileNumber) {
-        this.mobileNumber = mobileNumber;
-    }
-
-    public String getGroupName() {
-        return this.getGroupName();
-    }
-
-    public Object getGroup() {
-        return this.getGroup();
-    }
-
-    public void setGroup(Group group) {
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 }

@@ -1,54 +1,26 @@
 package com.driver;
 
-import com.driver.User;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 public class Group {
-    private String groupName;
-    private User admin;
-    private List<User> users;
-
-    Map<Object, Object> messages = new HashMap<>();
-    public Group(String groupName, User admin) {
-        this.groupName = groupName;
-        this.admin = admin;
-        this.users = new ArrayList<>();
+    private String name;
+    private int numberOfParticipants;
+    public Group(String name, int numberOfParticipants) {
+        this.name = name;
+        this.numberOfParticipants = numberOfParticipants;
     }
 
-    public String getGroupName() {
-        return groupName;
+    public String getName() {
+        return name;
     }
 
-    public User getAdmin() {
-        return admin;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public List<User> getUsers() {
-        return users;
+    public int getNumberOfParticipants() {
+        return numberOfParticipants;
     }
 
-    public void addUser(User user) {
-        users.add(user);
-    }
-
-    public int getNumUsers() {
-        return users.size();
-    }
-
-    public void addMessage(Message message) {
-    }
-
-    public Map<Object, Object> getMessages() {
-        return messages;
-    }
-
-    public void setAdmin(User user) {
-    }
-
-    public void setNumUsers(int i) {
+    public void setNumberOfParticipants(int numberOfParticipants) {
+        this.numberOfParticipants = numberOfParticipants;
     }
 }
