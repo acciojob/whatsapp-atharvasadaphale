@@ -1,7 +1,6 @@
 package com.driver;
-import org.apache.catalina.User;
 import org.springframework.stereotype.Service;
-
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -16,7 +15,7 @@ public class WhatsappService {
         return "SUCCESS";
     }
 
-    public Group createGroup(List<com.driver.User> users) {
+    public Group createGroup(List<User> users) {
         return whatsappRepository.createGroup(users);
     }
 
@@ -25,10 +24,10 @@ public class WhatsappService {
     }
 
     public int sendMessage(Message message, User sender, Group group) throws Exception {
-        return whatsappRepository.sendMessage(message, (com.driver.User) sender, group);
+        return whatsappRepository.sendMessage(message, sender, group);
     }
 
     public String changeAdmin(User approver, User user, Group group) throws Exception {
-        return whatsappRepository.changeAdmin((com.driver.User) approver, (com.driver.User) user, group);
+        return whatsappRepository.changeAdmin(approver, user, group);
     }
 }
